@@ -21,11 +21,18 @@ public class Board {
     private Long id;
     private String title;
     private String content;
-    @Column(updatable = false)
     @CreatedDate
+    @Column(updatable = false)
     private LocalDateTime regTime;
     @LastModifiedDate
     private LocalDateTime updateTime;
     @Enumerated(EnumType.STRING)
     private BoardStatus boardStatus;
+
+    public void updateTitle(String title) {
+        this.title = title;
+    }
+    public void updateContent(String content){
+        this.content = content;
+    }
 }
